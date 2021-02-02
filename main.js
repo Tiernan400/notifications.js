@@ -39,6 +39,7 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         element.append(button);
         button.id = "notifbutton";
         button.innerHTML = buttonText;
+
         //Button Styles
         button.style.cursor = "pointer";
         button.style.border = "1px solid black";
@@ -51,9 +52,9 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         if ( buttonCallback != null ) {
           if ( withdrawOnClick == true ) {
             button.onclick = function(){
-              buttonCallback
               element.style.width = "0px";
               setTimeout(function() {element.style.display = "none";}, 1000);
+              buttonCallback;
             };
           } else {
             button.onclick = buttonCallback;
@@ -72,6 +73,7 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
       element.style.width = "auto";
       element.style.paddingRight = "10px";
       element.style.paddingLeft = "5px";
+      element.style.backgroundColor = "white";
       element.style.border = "1px solid black";
       element.style.overflow = "hidden";
       element.style.whiteSpace = "no-wrap";
@@ -107,8 +109,8 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         element.append(button);
         button.id = "notifbutton";
         button.innerHTML = buttonText;
-        
-        //Button
+
+        //Button Styles
         button.style.cursor = "pointer";
         button.style.border = "1px solid black";
         button.style.backgroundColor = "yellow";
@@ -116,13 +118,13 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         button.style.outline = "none";
         button.onmouseover = function(){button.style.backgroundColor = "white";}
         button.onmouseout = function(){button.style.backgroundColor = "yellow";}
-        
+
         if ( buttonCallback != null ) {
           if ( withdrawOnClick == true ) {
             button.onclick = function(){
-              buttonCallback
               element.style.width = "0px";
               setTimeout(function() {element.style.display = "none";}, 1000);
+              buttonCallback;
             };
           } else {
             button.onclick = buttonCallback;
@@ -140,6 +142,8 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
       element.style.display = "inline-block";
       element.style.paddingRight = "10px";
       element.style.paddingLeft = "5px";
+      element.style.backgroundColor = "white";
+      element.style.zIndex = "9999999";
       element.style.position = "fixed";
       element.style.top = "15%";
       element.style.left = "0";
@@ -162,4 +166,11 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         }, 1000);
       }, 5000);
     }
+}
+
+function notifWithdraw() {
+  document.getElementById("notifcontainer").style.width = "0px";
+  setTimeout(function() {
+    document.getElementById("notifcontainer").style.display = "none";
+  }, 1000);
 }
