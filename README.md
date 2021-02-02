@@ -32,3 +32,13 @@ notify("New Message from "+user+"!", true, "Reply", function() {
 
 4. A live demo:
 http://tiernan.tk/notificationjs
+
+Note
+--------
+One final thing - if you have withdrawOnClick set to true, then your buttonCallback will not be executed. Therefore the callback can only really be used for things like if
+an app has a new release and you want to inform the user, just set buttonCallback to function() {} and withdrawOnClick to true.
+
+Update
+--------
+New function added - now if you want to withdrawOnClick with a buttonCallback, use notifWithdraw() at the end of the callback function.
+This stops any notification from coming out and withdraws it (The same as withdrawOnClick).
