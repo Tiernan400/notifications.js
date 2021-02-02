@@ -107,6 +107,16 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
         element.append(button);
         button.id = "notifbutton";
         button.innerHTML = buttonText;
+        
+        //Button
+        button.style.cursor = "pointer";
+        button.style.border = "1px solid black";
+        button.style.backgroundColor = "yellow";
+        button.style.whiteSpace = "no-wrap";
+        button.style.outline = "none";
+        button.onmouseover = function(){button.style.backgroundColor = "white";}
+        button.onmouseout = function(){button.style.backgroundColor = "yellow";}
+        
         if ( buttonCallback != null ) {
           if ( withdrawOnClick == true ) {
             button.onclick = function(){
@@ -125,15 +135,6 @@ function notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) {
       p.style.display = "inline-block";
       p.style.whiteSpace = "no-wrap";
       p.style.margin = "5px";
-
-      //Button
-      button.style.cursor = "pointer";
-      button.style.border = "1px solid black";
-      button.style.backgroundColor = "yellow";
-      button.style.whiteSpace = "no-wrap";
-      button.style.outline = "none";
-      button.onmouseover = function(){button.style.backgroundColor = "white";}
-      button.onmouseout = function(){button.style.backgroundColor = "yellow";}
 
       //Container
       element.style.display = "inline-block";
