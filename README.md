@@ -41,4 +41,4 @@ an app has a new release and you want to inform the user, just set buttonCallbac
 Update
 --------
 New function added - now if you want to withdrawOnClick with a buttonCallback, use notifWithdraw() at the end of the callback function.
-This stops any notification from coming out and withdraws it (The same as withdrawOnClick).
+This stops any notification from coming out and withdraws it (The same as withdrawOnClick). Note: You must have withdrawOnClick undefined or set to false for this to work.
