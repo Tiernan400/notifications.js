@@ -8,7 +8,7 @@ Or:
 2. Once you've done that, you can display a notification with the notify() function.
 The format of the function is like so:
 
-notify(text, isButton, buttonText, buttonCallback, withdrawOnClick)
+` notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) `
 
 * text is the text to display - must be a string
 
@@ -22,23 +22,26 @@ notify(text, isButton, buttonText, buttonCallback, withdrawOnClick)
 
 3. An example for mabye a messaging site:
 
-notify("New Message from "+user+"!", true, "Reply", function() {
-
-  message(user);
-  
-  window.addEventListener("messageSent", notify("Message sent!", false));
-  
-}, true);
+`notify("New Message from "+user+"!", true, "Reply", function() { message(user); console.log("Message sent!") }, true);`
 
 4. A live demo:
 http://tiernan.tk/notificationjs
 
-Note
---------
-One final thing - if you have withdrawOnClick set to true, then your buttonCallback will not be executed. Therefore the callback can only really be used for things like if
-an app has a new release and you want to inform the user, just set buttonCallback to function() {} and withdrawOnClick to true.
+New Version
+===========
+* notifications-2.0.js
+* https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications-2.0.js
 
-Update
---------
-New function added - now if you want to withdrawOnClick with a buttonCallback, use notifWithdraw() at the end of the callback function.
-This stops any notification from coming out and withdraws it (The same as withdrawOnClick). Note: You must have withdrawOnClick undefined or set to false for this to work.
+Improved Syntax
+---------------
+notify(options);
+
+    notify({
+        text: "New notification!",
+        isButton: true,
+        buttonText: "Ok",
+        buttonCallback: function(){
+            console.log("You clicked the button!");
+        },
+        withdrawOnClick: true
+    });
