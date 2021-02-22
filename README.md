@@ -1,10 +1,10 @@
 # notifications.js
 
-1. In your HTML/PHP file, point to main.js
+1. In your HTML/PHP file, point to notifications.js
 
-  <script src="https://raw.githubusercontent.com/Tiernan400/notifications.js/main/main.js" ></script>
+  <script src="https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications.js" ></script>
 Or:
-  <script src="notifications.js/main.js"></script>
+  <script src="notifications.js"></script>
 2. Once you've done that, you can display a notification with the notify() function.
 The format of the function is like so:
 
