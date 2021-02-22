@@ -1,5 +1,26 @@
 # notifications.js
 
+Version 2.0
+===========
+* notifications-2.0.js
+* https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications-2.0.js
+
+Improved Syntax
+---------------
+notify(options);
+
+    notify({
+        text: "New notification!",
+        isButton: true,
+        buttonText: "Ok",
+        buttonCallback: function(){
+            console.log("You clicked the button!");
+        },
+        withdrawOnClick: true
+    });
+
+Version 1.0
+===========
 1. In your HTML/PHP file, point to notifications.js
 
   <script src="https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications.js" ></script>
@@ -26,22 +47,3 @@ The format of the function is like so:
 
 4. A live demo:
 http://tiernan.tk/notificationjs
-
-New Version
-===========
-* notifications-2.0.js
-* https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications-2.0.js
-
-Improved Syntax
----------------
-notify(options);
-
-    notify({
-        text: "New notification!",
-        isButton: true,
-        buttonText: "Ok",
-        buttonCallback: function(){
-            console.log("You clicked the button!");
-        },
-        withdrawOnClick: true
-    });
