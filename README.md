@@ -5,45 +5,39 @@ Version 2.0
 * notifications-2.0.js
 * https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications-2.0.js
 
-Improved Syntax
----------------
-notify(options);
+Documentation
+-------------
+notifications.js Version 2.0 is simular to v1.0 except instead of multiple parameters in a specific order, there is only one called `options`, which is in object format.
+It includes one function, `notify()` which calls the notifcation.
+All the parameters are listed below.
+
+*Mandatory*
+* `text` is the text to display *string*
+* `isButton` specifies whether to include a button *boolean*
+* `buttonText` is the text to put in the button [Only mandatory if isButton is set to true] *string*
+
+*Optional*
+* `buttonCallback` is the action to take when the button is clicked *function*
+* `withdrawOnClick` specifies whether to withdraw the notification when the button is clicked *boolean*
+
+Syntax
+------
+`notify(options);`
+
+Examples
+--------
 
     notify({
-        text: "New notification!",
+        text: "New item added to cart!",
         isButton: true,
-        buttonText: "Ok",
+        buttonText: "Check it out",
         buttonCallback: function(){
-            console.log("You clicked the button!");
+            displayModal("cart");
         },
         withdrawOnClick: true
     });
-
-Version 1.0
-===========
-1. In your HTML/PHP file, point to notifications.js
-
-  <script src="https://raw.githubusercontent.com/Tiernan400/notifications.js/main/notifications.js" ></script>
-Or:
-  <script src="notifications.js"></script>
-2. Once you've done that, you can display a notification with the notify() function.
-The format of the function is like so:
-
-` notify(text, isButton, buttonText, buttonCallback, withdrawOnClick) `
-
-* text is the text to display - must be a string
-
-* isButton is whether to display a button or not - value must be boolean
-
-* buttonText is self-explanatory - must be a string
-
-* buttonCallback is the code to run when the button is clicked - value is like: function() { /* script */ } - is not mandatory
-
-* withdrawOnClick is whether for the notification to disapear when the button is click - value must be boolean - is not mandatory
-
-3. An example for mabye a messaging site:
-
-`notify("New Message from "+user+"!", true, "Reply", function() { message(user); console.log("Message sent!") }, true);`
-
-4. A live demo:
-http://tiernan.tk/notificationjs
+    
+    notify({
+        text: "File saved",
+        isButton: false,
+    });
