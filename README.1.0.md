@@ -1,3 +1,5 @@
+# notifications.js
+
 Version 1.0
 ===========
 1. In your HTML/PHP file, point to notifications.js
