@@ -36,7 +36,8 @@ Examples
         },
         withdrawOnClick: true
     });
-    
+Or
+
     notify({
         text: "File saved",
         isButton: false,
